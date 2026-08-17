@@ -1,4 +1,5 @@
-#day16Task:#Length of unique student ids in a class,where user can enter first input
+
+'''#day16Task:#Length of unique student ids in a class,where user can enter first input
 #he should be giving number of student_ids,he will enter student_ids
 #n = int(input())
 #student_ids = input().split()
@@ -12,7 +13,7 @@ result = set(student_ids)
 print("Unique student IDs:", result)
 print("Length:", len(result))
 
-'''
+
 #TASK 1: Student marks manager
 #Scenario: A teacher wants to bulid and update a simple list of student marks.
 #Task : write  a program that accepts marks,adds more values,removes selected values,aand displays the final list
@@ -85,7 +86,7 @@ backup = numbers.copy()
 numbers.clear()
 print("Original list:", numbers)
 print("Backup:", backup)
-'''
+
 #Task 4:Unique Name Manger
 #Scenario:A class list contains repeated student names and needs to be cleaned
 #Starting data:Use the following list..
@@ -112,25 +113,46 @@ print('Discarded:', a)
 for i in names:
     print(i)
 
-'''    
+    
 #Task 5: Course student comparision
 #Scenario:A training center wants to compare the students enrolled in python and java courses.
 #Starting data:create the following sets..
 #python_students ={"Asha","Rahul","John","Meera"}
-da_students={"Rahul","Meera","Arun"}
-python_students = {"Asha", "Rahul", "John", "Meera"}
-da_students = {"Rahul", "Meera", "Arun"}
-print("All students:", python_students.union(da_students))
-print("Both courses:", python_students.intersection(da_students))
-print("Only Python:", python_students.difference(da_students))
-print("Only one course:", python_students.symmetric_difference(da_students))
-print("DA subset of Python:", da_students.issubset(python_students))
-print("Python superset of DA:", python_students.issuperset(da_students))
-print("Disjoint:", python_students.isdisjoint(da_students))
-print("\nStudents in both:")
-for name in python_students.intersection(da_students):
-    print(name)
+python_students={'Asha','Rahul','John','Meera'}
+da_students={'Rahul','Meera','Arun'}
+a=python_students.union(da_students)
+b=python_students.intersection(da_students)
+c=python_students.difference(da_students)
+d=python_students.symmetric_difference(da_students)
+print('All Students:')
+for i in a:
+    print(i)
+print('Students have both courses:')
+for j in b:
+    print(j)
+print('Only Python:') 
+for k in c:
+    print(k)
+print('Only one course:')
+for m in d:
+    print(m)
+    
+print("\nDA is subset of Python:", da_students.issubset(python_students))
+if da_students.issubset(python_students):
+    print("All DA students are also Python students")
+else:
+    print("All DA students are not Python students")
+
+print("Python is superset of DA:", python_students.issuperset(da_students))
+if python_students.issuperset(da_students):
+    print("Python contains all DA students")
+else:
+    print("Python does not contain all DA students")
+
+print("Both sets are disjoint:", python_students.isdisjoint(da_students))
+if python_students.isdisjoint(da_students):
+    print("There are no common students")
+else:
+    print("There are common students in both courses")
+
 '''
-
-
-
